@@ -1,0 +1,23 @@
+{
+    "time_intent": [
+        "what is the time",
+        "what time it is"
+    ],
+    "shutdown_intent": [],
+    "new_quest_intent": [
+        "give me a new quest",
+        "give me a new mission",
+        "give me a new"
+    ],
+    "complete_quest_intent": [
+        "the quest is complete",
+        "i completed the quest",
+        "quest completed"
+    ],
+    "status_intent": [
+        "whats my rank",
+        "whats my status",
+        "shadow go to rest",
+        "what is my rank"
+    ]
+}
