@@ -1,0 +1,23 @@
+{
+  "fitness": [
+    { "task": "Do 10 pushups", "xp": 10 },
+    { "task": "Walk for 15 minutes", "xp": 15 },
+    { "task": "Do 20 squats", "xp": 12 },
+    { "task": "Stretch for 5 minutes", "xp": 8 },
+    { "task": "Drink 2L of water today", "xp": 5 }
+  ],
+  "btech": [
+    { "task": "Study for 20 minutes", "xp": 20 },
+    { "task": "Solve 2 programming problems", "xp": 25 },
+    { "task": "Revise lecture notes", "xp": 15 },
+    { "task": "Write 50 lines of code", "xp": 30 },
+    { "task": "Watch one recorded lecture", "xp": 20 }
+  ],
+  "self_improvement": [
+    { "task": "Read 10 pages of a book", "xp": 15 },
+    { "task": "Meditate for 5 minutes", "xp": 10 },
+    { "task": "Plan tomorrow's tasks", "xp": 12 },
+    { "task": "Clean your workspace", "xp": 8 },
+    { "task": "Write a short journal entry", "xp": 15 }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "nihal",
+    "goals": [
+        "to become a professional video editor"
+    ],
+    "preferences": {
+        "tone": "dark"
+    },
+    "last_quest": {
+        "category": "fitness",
+        "task": "Stretch for 5 minutes",
+        "xp": 8,
+        "active": false
+    },
+    "xp": 141,
+    "level": 3,
+    "rank": "D",
+    "completed_quests": 14,
+    "rank_name": "Shadow Walker"
+}

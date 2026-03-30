@@ -7,50 +7,28 @@ import threading
 import os
 import queue
 
-from listener import listen
-from speaker import speak
-from commands import execute
+from shadow.voice.listener import listen
+from shadow.voice.speaker import speak
+from shadow.core.commands import execute
 
-from shadow_gui import show_shadow, hide_shadow, app, update_user
+from shadow.ui.shadow_gui import (
+    show_shadow,
+    hide_shadow,
+    app,
+    update_user,
+    notify_listening,
+    notify_processing,
+)
 
-from memory_manager import get_name
+from shadow.systems.profile_system import get_name
 
-
-WAKE_WORDS = ["shadow", "arise", "shadow arise"]
-
-STOP_PHRASES = [
-    "shadow rest",
-    "shadow deactivate",
-    "stand down shadow",
-    "shadow standby"
-]
-
-
-WAKE_RESPONSES = [
-
-    "Shadow system initialized. Awaiting your command.",
-    "Awakening complete. Shadow is online.",
-    "All systems bow to your will.",
-    "Authority confirmed. Shadow has arisen."
-
-]
-
-SHUTDOWN_RESPONSES = [
-
-    "Returning to the shadows.",
-    "System entering standby.",
-    "Shutting down."
-
-]
-
-
-def normalize(text: str):
-
-    text = text.lower()
-    text = re.sub(r"[^\w\s]", "", text)
-    text = re.sub(r"\s+", " ", text)
-
-    return text.strip()
+from shadow.voice.wakeword import (
+    WAKE_WORDS,
+    STOP_PHRASES,
+    WAKE_RESPONSES,
+    SHUTDOWN_RESPONSES,
+    normalize,
+)
 
 
 active = False
@@ -128,7 +106,11 @@ def execution_loop():
             # EXECUTE COMMAND
             if active:
 
-                execute(heard)
+                notify_processing(True)
+                try:
+                    execute(heard)
+                finally:
+                    notify_processing(False)
 
         except Exception as e:
 
